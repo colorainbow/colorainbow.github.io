@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>bloop</title>
+    <script type="text/javascript">
+      function draw() {
+        // make the canvas the same size as the window
+        var canvas = document.getElementById('maxcan');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight-5;
+
+        var ctx = canvas.getContext('2d');
+
+for (let i = 0; i < 100; i++) {
+
+  for (let j = 0; j < 100; j++) {
+    ctx.fillStyle = `rgb(
+        ${Math.floor(255 - (255/100) * i)},
+        ${Math.floor(255 - (255/100) * j)},
+        0)`;
+    ctx.fillRect(j * 10, i * 10, 10, 10);
+
+  }
+}
+
+        //ctx.fillStyle = 'rgb(0, 0, 255)';
+        //ctx.fillRect(0, 1070, 4, 4);
+
+      }
+
+
+
+    </script>
+    <style type="text/css">
+      canvas { border-bottom: 1px solid black; }
+    </style>
+  </head>
+  <body onload="draw();" style="width: 100%; margin:0; height: 100%;"><canvas id="maxcan"></canvas></body>
+</html>
